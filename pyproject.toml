@@ -1,0 +1,24 @@
+[project]
+name = "ipynb-checker"
+version = "0.1.0"
+description = "GUI tool for grading student Jupyter notebooks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "requests>=2.0",
+    "pydantic>=2.0",
+    "xlsxwriter>=3.0",
+    "nbformat>=5.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5"]
+
+[tool.ruff]
+line-length = 100
+
+[project.scripts]
+ipynb-checker = "ipynb_checker.cli:main"
+ipynb-checker-gui = "ipynb_checker.gui:main"
